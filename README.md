@@ -58,7 +58,7 @@
 ### 方式一：Claude Code
 
 ```bash
-git clone https://github.com/rommn/compound.git
+git clone https://github.com/viola100x/compound.git
 cd compound
 claude
 ```
@@ -72,7 +72,7 @@ claude
 clawhub install compound
 
 # 方法 B：直接发 GitHub 链接到 OpenClaw 聊天窗口
-https://github.com/rommn/compound
+https://github.com/viola100x/compound
 ```
 
 安装后，在任意聊天频道发消息即可使用。支持文字和语音输入。
