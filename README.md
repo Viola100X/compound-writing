@@ -218,10 +218,7 @@ compound/
 │   ├── 02-draft/                   ← 草稿
 │   ├── 03-published/               ← 已发布
 │   └── 04-archive/                 ← 归档
-├── 02-knowledge-base/              ← 知识库
-│   ├── _inbox/                     ← All-in-one Inbox 存档
-│   ├── 本专业信息/                  ← 你的背景、产品信息
-│   └── 爆款素材/                    ← AI / IP / Web3 / 商业 / 心理学
+├── 02-knowledge-base/              ← 知识库（使用时自动创建）
 └── skills/                         ← 9 个专项能力模块
     ├── personal-os/                ← 个人品牌操作系统（首次使用）
     ├── inbox-capture/              ← 素材收集 + 存档

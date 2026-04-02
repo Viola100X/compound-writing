@@ -114,9 +114,7 @@ Personal OS（一次性初始化）
 
 写作时可直接说：「在知识库找关于 Agent 的内容」「找之前存的素材」
 
-- `02-knowledge-base/_inbox/` — All-in-one Inbox 自动存档
-- `02-knowledge-base/本专业信息/` — 个人信息 + 产品信息
-- `02-knowledge-base/爆款素材/` — AI / IP / Web3 / 商业 / 心理学
+知识库目录 `02-knowledge-base/` 在首次使用 `inbox-capture` 时自动创建。
 
 ---
 
