@@ -1,6 +1,6 @@
 # 爆款内容结构框架库
 > 供 `content-structure` Skill 调用，不直接触发。
-> 数据基础：7 位博主 118 条推文收藏率分析
+> 供 `content-structure` Skill 调用，不直接触发。
 
 ---
 
@@ -38,7 +38,7 @@
 - 话题词：`Happiness (if you want it):`
 - 个人背书：`过去两年领悟出的几句话，真乃「救命」箴言：`
 
-**真实案例（收藏12,728，10.14/千次曝光）**：
+**真实案例**：
 > `Happiness (if you want it):*`
 > `1. Meet basic needs`
 > `2. Avoid cheap dopamine`
@@ -46,7 +46,7 @@
 > `4. Limit desires to ones achievable at the edge of your capability`
 > `5. Find something beyond yourself`
 > `*Most people want something else.`
-> — naval
+>
 
 **优化原则**：
 - ❌ 清单条目太长（超过25字）→ 读者扫读时会跳过
@@ -68,11 +68,11 @@
 [真实案例清单]（3-5个读者熟悉的例子）
 ```
 
-**真实案例（收藏1,538，6.80/千次曝光）**：
+**真实案例**：
 > `The most efficient distribution is getting users to promote the product as a way of promoting themselves`
 > `Especially their (1) achievement, (2) intellect, (3) taste, (4) access, (5) tribe`
 > `Examples: YouTube play button / Spotify Wrapped / Oura sleep score / GitHub contribution chart`
-> — lulu
+>
 
 **优化原则**：
 - ✅ 命题句必须「可传播」——能被人直接引用，独立成句也有意义
@@ -96,10 +96,10 @@
 - 对仗型：[场景A] → [结果A]；[场景B] → [结果B]
 ```
 
-**真实案例（收藏507，3.38/千次曝光）**：
+**真实案例**：
 > `This is the golden age for writers`
 > `Late enough to benefit from internet distribution, early enough to be irreplaceable by AI, just in time to have the most valuable and singularly human skill that everyone is finally realizing is worth paying a lot for`
-> — lulu
+>
 
 ---
 
@@ -116,11 +116,11 @@
 [具体解决方案]（不是泛泛而谈，要有具体名字/步骤）
 ```
 
-**真实案例（收藏829，4.12/千次曝光）**：
+**真实案例**：
 > `办港卡简单，但最重要的一条一定要牢记：`
 > `绝对不要用汇丰、渣打这些接收币圈资金，早晚会封号！`
 > `可以用众安、MOX之类收款，然后进到股市将来再出来后再去汇丰。`
-> — dayu
+>
 
 ---
 
