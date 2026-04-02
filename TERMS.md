@@ -38,4 +38,4 @@
 
 © the 1% Founder Program. 由 Viola 创建。
 
-如需商业授权，请联系：[Twitter @aspect_viola](https://x.com/aspect_viola)
+如需商业授权，请联系：[Twitter @violawgmi](https://x.com/violawgmi)

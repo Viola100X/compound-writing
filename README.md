@@ -245,6 +245,6 @@ compound/
 
 ---
 
-*由 [Viola](https://x.com/aspect_viola) 创建 | the 1% Founder Program | 基于 Claude Code 构建*
+*由 [Viola](https://x.com/violawgmi) 创建 | the 1% Founder Program | 基于 Claude Code 构建*
 
 *每一篇发出去的内容，都是对这套系统的一次训练。*
