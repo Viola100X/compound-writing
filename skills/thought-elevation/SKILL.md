@@ -3,9 +3,9 @@ name: thought-elevation
 description: |
   思想升华。把你的洞察连接到更大的原则，让文章说的东西比你以为的更多。
   三种模式：跨学科升华（默认）、理论透镜（哲学/心理/社会学分析）、奥派辩论（经济话题）。
-  触发方式：/elevate、/升华、「升华一下」「更深一层」「这个背后是什么」「让文章更有深度」
+  触发方式：「升华一下」「更深一层」「这个背后是什么」「让文章更有深度」
   Thought elevation. Connect insights to universal principles via cross-disciplinary thinking.
-  Trigger: /elevate, "升华一下", "go deeper", "what's the deeper truth"
+  Trigger: "升华一下", "go deeper", "what's the deeper truth"
 ---
 
 # 思想升华
@@ -252,6 +252,23 @@ Claude：
 钉子句：「[金句]」
 
 下一步：
-- /write — 带着升华后的原则进入成稿
-- /interview — 如果升华暴露了新的素材缺口，回去补素材
+- 说「用我的文风写」——带着升华后的原则直接出初稿
+- 说「采访我」——如果升华暴露了新的素材缺口，回去补素材
 ```
+
+---
+
+## 完成后写入 session.md
+
+升华产出追加到 `.compound/session.md` 的「深化」段落（与 ai-journalist 共享这一段，用子标题区分）：
+
+```markdown
+## 深化
+### 升华后的核心原则（thought-elevation）
+- 原始观点：...
+- 升华后原则：...
+- 钉子句：「...」
+- 升华模式：跨学科 / 理论透镜 / 奥派
+```
+
+更新 frontmatter：`current_phase: deepen`。

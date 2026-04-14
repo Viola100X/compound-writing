@@ -1,2 +1,13 @@
 .DS_Store
 *.docx
+
+# 用户运行时产生的个人数据 —— 绝对不要 commit
+.compound/
+02-knowledge-base/
+
+# 用户的草稿和已发布内容 —— 保留目录结构（.gitkeep），忽略所有内容
+01-创作管道/01-inbox/*
+01-创作管道/02-draft/*
+01-创作管道/03-published/*
+01-创作管道/04-archive/*
+!01-创作管道/**/.gitkeep

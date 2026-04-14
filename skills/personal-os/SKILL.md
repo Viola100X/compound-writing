@@ -2,9 +2,9 @@
 name: personal-os
 description: |
   个人品牌操作系统。首次使用时引导建立个人定位、经历素材库和写作风格，后续所有内容创作基于此。
-  触发方式：/personal-os、「建立个人品牌」「初始化」「我是谁」「建立文风」「帮我做文风分析」
+  触发方式：「建立个人品牌」「初始化」「我是谁」「建立文风」「帮我做文风分析」
   Personal brand operating system. Guides user to build positioning, story bank and writing style on first use.
-  Trigger: /personal-os, "build my brand", "initialize", "who am I", "build writing style"
+  Trigger: "build my brand", "initialize", "who am I", "build writing style"
 ---
 
 # Personal OS：个人品牌操作系统
@@ -33,39 +33,53 @@ description: |
 
 ```
 Personal OS 进度：
-✅ 品牌定位  ⬜ 经历素材库  ⬜ 文风提取
+✅ 个人定位  ⬜ 经历素材库  ⬜ 文风提取
 ```
 
 ### 链路引导
 
 每个模块完成后，告诉用户下一步是什么，并给出选项：继续 / 跳过 / 退出。
 
-全部完成后推荐下一个 skill（/topic 或 /inbox）。
+全部完成后，推荐用户开始第一次创作——说"说『帮我找选题』开始"或"说『存一下』先存点素材"。不要用斜杠命令。
 
-### Telemetry
+### 持久化（重要）
 
-每次 skill 调用完成后，记录到 `skill-usage.jsonl`：
+**每个模块完成（或用户明确选择跳过）后，立刻把结果写入 `.compound/personal-os.md`**。目录不存在就先 `mkdir -p .compound`。
 
-```json
-{
-  "skill": "personal-os",
-  "timestamp": "2026-03-25T15:00:00Z",
-  "modules_completed": ["positioning", "story_bank"],
-  "modules_skipped": ["writing_style"],
-  "steps_completed": 14,
-  "steps_skipped": 3,
-  "duration_minutes": 22,
-  "completeness_score": 0.82
-}
+文件的 frontmatter 和结构见根目录 CLAUDE.md 的"持久化与 Skill 交接协议"。简要：
+
+```markdown
+---
+status: completed | partial
+brand: completed | skipped
+hero_journey: completed | skipped | partial
+writing_style: completed | skipped
+updated_at: YYYY-MM-DD
+---
+
+## 个人定位
+（模块一产出）
+
+## 经历素材库
+（模块二产出）
+
+## 文风档案
+（模块三产出）
 ```
+
+规则：
+- 任一模块完成 → 写入对应段落 + 更新对应 frontmatter 字段
+- 三个模块都 `completed` 或 `skipped` → `status: completed`
+- 只完成一部分 → `status: partial`
+- 再次触发 personal-os 时，先读这个文件，对已完成的模块说"你已经在 YYYY-MM-DD 建立过了，要更新吗？"不要重复从零问
 
 ---
 
-## 模块一：品牌定位
+## 模块一：个人定位
 
 进入时说：
 
-> **我们现在进入品牌定位环节。**
+> **我们现在进入个人定位环节。**
 > 我需要了解三部分信息：你是谁、你的产品/项目、你的内容方向。
 > 你可以一次性把这些发给我，也可以发产品介绍让我提炼。不确定的先跳过。
 
@@ -99,7 +113,7 @@ Personal OS 进度：
 整理成品牌档案表格：
 
 ```
-✅ 品牌定位 完成
+✅ 个人定位 完成
 
 | 字段 | 内容 |
 |------|------|
@@ -305,16 +319,14 @@ Claude 基于语料完成以下工作（用户不参与）：
 全部模块完成后，输出 Personal OS 完成报告：
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ Personal OS 初始化完成
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Personal OS 初始化完成
 
 完成度：
-品牌定位：  ✅ 完成
-经历素材库：✅ 完成（X/12 步）
-文风提取：  ✅ 完成（基于 X 篇语料）
+个人定位：  完成
+经历素材库：完成（X/12 步）
+文风提取：  完成（基于 X 篇语料）
 
-你的一句话定位：
+一句话定位：
 [定位]
 
 人生三部曲：
@@ -324,17 +336,37 @@ Claude 基于语料完成以下工作（用户不参与）：
 
 文风关键词：
 [叙事弧线] · [论证偏好 Top1] · [说话姿态]
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⏭️ 下一步
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-你的 Personal OS 已经就绪。现在可以：
-
-A. /topic — 开始找选题（基于你的定位和经历自动推荐）
-B. /inbox — 先收集一些素材再选题
-C. 直接告诉我你想写什么，我帮你走完全流程
 ```
+
+## 完成后如何衔接下一步
+
+Personal OS 建完之后，**不要直接进入某个 Skill**。按以下两种情况分别处理：
+
+### 情况 A：用户只是想建档（建立 Personal OS 期间没给过具体写作 idea）
+
+用 ask-format 格式引导：
+
+```
+进度：Personal OS 已建立完成
+
+你的个人定位、经历素材库、文风档案都就绪了。接下来可以正式进入创作——有三个常用入口：
+
+选项：
+- A) 说「帮我找选题」，基于你的定位自动推荐 3-5 个方向
+- B) 说「存一下」+ 你的想法，先把碎片素材存起来再选题
+- C) 直接告诉我你现在想写什么，我帮你判断该先做什么
+
+建议选 A。你刚建完 Personal OS，系统正处于"最懂你"的状态，让它推一批贴合你定位的选题，命中率最高。
+```
+
+### 情况 B：用户在建 Personal OS 过程中或之前给过一个具体 idea（比如"我想写非共识"）
+
+**不要直接出初稿。** 按 CLAUDE.md 的【总编辑决策逻辑 · 决策点 1】走——对那个 idea 做素材 5 维诊断（数据/故事/金句/权威/痛点），再给 A/B/C 选项：
+- 素材齐 → 建议出初稿
+- 素材薄 → 建议采访我
+- 观点浅 → 建议升华一下
+
+**永远给三个选项 + 一个建议，不要单线程送走用户。**
 
 ---
 

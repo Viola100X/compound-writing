@@ -238,7 +238,8 @@ JSON 生成后，自动生成自包含 HTML 报告：
 
 ## 复盘报告保存位置
 
-分析完成后，保存至：
+分析完成后，保存至以下路径。**若目录不存在请先用 `mkdir -p` 创建**（首次使用时这些目录都还没建立）：
+
 ```
 04-发布复盘/YYYY-MM-月度复盘.md              ← 文字版分析
 visualizer/reports/review-{handle}-{YYYY-MM}.html  ← 可视化版
